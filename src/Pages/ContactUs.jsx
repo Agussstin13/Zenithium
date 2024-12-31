@@ -46,7 +46,7 @@ export default function ContactForm() {
           src={ContactUsImage}
         />
       </div>
-      <Container minWidth="sm" sx={{ mt: 8, mb: 4, color: "#FFFFFF" }}>
+      <Container sx={{ mt: 8, mb: 4, color: "#FFFFFF" }}>
         <Box
           component="form"
           onSubmit={handleSubmit}

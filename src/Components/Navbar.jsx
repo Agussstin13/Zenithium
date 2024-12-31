@@ -19,40 +19,35 @@ const pages = ['Sobre Nosotros', 'Contactanos', 'Blog'];
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const navigate = useNavigate();
-  const location = useLocation();
+  const location = useLocation(); 
 
-const handleScrollToContact = () => {
-  
-  // Primero, redirigimos a la ruta correcta y luego nos desplazamos a la sección.
-  // Si estamos en la misma página, solo desplazamos, sino, cambiamos la ruta
-  if (location.pathname === '/') {
-    // Si estamos en la página raíz, simplemente desplazamos al ancla
-    const contactSection = document.getElementById('ContactUs');
-    if (contactSection) {
-      let yOffset = contactSection.getBoundingClientRect().top + window.scrollY - 68.5;  // Ajusta el valor según el header
-      window.scrollTo({ top: yOffset, behavior: 'smooth' });
-    }
-  } else {
-    // Si estamos en una página diferente, redirigimos a la misma página pero a la sección
-    navigate('/#ContactUs');
-    // Usamos setTimeout para esperar a que la URL cambie y el DOM se actualice.
+  const handleScrollToContact = () => {
+    if (location.pathname !== '/') {
+      navigate('/');
+    } 
     setTimeout(() => {
-      const contactSection = document.getElementById('ContactUs');
+      let contactSection = document.getElementById('ContactUs');
       if (contactSection) {
-        let yOffset = contactSection.getBoundingClientRect().top + window.scrollY - 68.5;  // Ajusta el valor según el header
+        let yOffset = contactSection.getBoundingClientRect().top + window.scrollY - 68.5;
         window.scrollTo({ top: yOffset, behavior: 'smooth' });
       }
-    }, 100); // Ajusta el tiempo si es necesario
+      setAnchorElNav(null);
+    }, 100);
   }
-}
+  
 
   const handleScrollToAboutUs = () => {
-    const contactSection = document.getElementById('AboutUs');
-    if (contactSection) {
-      let yOffset = contactSection.getBoundingClientRect().top + window.scrollY - 68.5;
-      window.scrollTo({ top: yOffset, behavior: 'smooth' });
-    }
-    setAnchorElNav(null);
+    if (location.pathname !== '/') {
+      navigate('/');
+    } 
+    setTimeout(() => {
+      let AboutSection = document.getElementById('AboutUs');
+      if (AboutSection) {
+        let yOffset = AboutSection.getBoundingClientRect().top + window.scrollY - 68.5;
+        window.scrollTo({ top: yOffset, behavior: 'smooth' });
+      }
+      setAnchorElNav(null);
+    }, 100);
   };
 
   return (
@@ -109,7 +104,7 @@ const handleScrollToContact = () => {
             >
               {pages.map((page) => (
                 <MenuItem key={page} onClick={() => setAnchorElNav(null)}>
-                  <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
+                  <Typography sx={{ textAlign: 'center' }} onClick={page === 'Contactanos' ? handleScrollToContact : page === 'Sobre Nosotros' ? handleScrollToAboutUs : page === 'Blog' ? () => navigate('/blog') : null}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
