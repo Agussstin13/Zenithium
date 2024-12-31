@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Poppins';
+    src: url('../Fonts/Poppins-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'Poppins';
+    src: url('../Fonts/Poppins-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+body{
+    width: 100%;
+    font-family: 'poppins';
+    margin: 0;
+    background-image: url('../Images/background.jpg');
+    background-size: auto;
+    background-position: center;
+    background-repeat: repeat;
+}
