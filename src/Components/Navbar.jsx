@@ -14,7 +14,7 @@ import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router';
 
-const pages = ['Sobre Nosotros', 'Contactanos', 'Blog'];
+const pages = ['Sobre Nosotros', 'Contactanos'/*, 'Blog'*/];
 
 export default function Navbar() {
   const [anchorElNav, setAnchorElNav] = useState(null);
