@@ -10,9 +10,7 @@ export default function ContactForm() {
 
   function handleSubmit(e) {
     e.preventDefault();
-    const mailtoLink = `mailto:${EMAIL}?subject=${encodeURIComponent(
-      subject
-    )}&body=${encodeURIComponent(message)}`;
+    const mailtoLink = `mailto:${EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(message)}`;
     window.location.href = mailtoLink;
   }
 

@@ -146,7 +146,7 @@ const TermsAndConditions = () => {
           <Typography variant="body1" paragraph>
             Para cualquier consulta o comentario relacionado con estos Términos
             y Condiciones, puedes contactarnos a través de la página de contacto
-            o al siguiente correo electrónico: <a href="mailto:contacto@zenithium.com">{EMAIL}</a>
+            o al siguiente correo electrónico: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
           </Typography>
         </Box>
         </DialogContent>

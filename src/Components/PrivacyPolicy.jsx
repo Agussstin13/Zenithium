@@ -60,7 +60,7 @@ export default function PrivacyPolicy(){
           </Typography>
           <Typography paragraph>
             Si tienes preguntas sobre esta Política de Privacidad o sobre cómo manejamos tus datos, no dudes en ponerte en contacto con nosotros
-            a través del siguiente correo electrónico: <a href="mailto:contacto@zenithium.com">{EMAIL}</a>.
+            a través del siguiente correo electrónico: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.
           </Typography>
         </DialogContent>
         <DialogActions>
