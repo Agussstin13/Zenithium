@@ -9,7 +9,8 @@ export default function AboutUs() {
       component="section"
       sx={{
         py: 8,
-        marginBlock: "20vh",
+        marginTop: "20vh",
+        padding: 0
       }}
     >
       <img

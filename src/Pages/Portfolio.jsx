@@ -43,7 +43,7 @@ export default function Portfolio() {
   ];
 
   return (
-    <Container maxWidth="lg" sx={{ marginBlock: '20vh' }}>
+    <Container maxWidth="lg" sx={{ marginTop: '20vh' }}>
           <Typography
             variant="h3"
             sx={{

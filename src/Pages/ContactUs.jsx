@@ -17,7 +17,7 @@ export default function ContactForm() {
   }
 
   return (
-    <div style={{ marginBlock: "20vh"}}>
+    <div style={{ marginTop: "20vh"}}>
       <div style={{ position: "relative"}}>
         <Typography
           variant="p"
@@ -33,7 +33,7 @@ export default function ContactForm() {
             textAlign: "center",
           }}
         >
-          Contactanos
+          contáctanos
         </Typography>
         <img
           id="ContactUs"
