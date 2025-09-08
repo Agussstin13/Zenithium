@@ -1,30 +1,35 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageProvider";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button-glow";
 import { ExternalLink } from "lucide-react";
 import Fidebill from "@/assets/Fidebill.png";
 import SaintAnalytics from "@/assets/SaintAnalytics.png";
 
-const projects = [
-{
-  title: "Fidebill",
-  category: "Fidelización de clientes",
-  description: "Plataforma digital de fidelización que permite a los clientes visualizar promociones, puntos acumulados, historial de transacciones y ubicación de locales, ofreciendo a las empresas una herramienta eficaz para fortalecer la relación con sus consumidores.",
-  image: Fidebill,
-  tech: ["React", ".NET", "SQL Server", "Azure"],
-  liveUrl: "https://www.fidebill.com.ar"
-},
-{
-  title: "Saint Analytics",
-  category: "Análisis estadístico",
-  description: "Aplicación web de análisis de datos que facilita la gestión y visualización de estadísticas para instituciones, integrando dashboards interactivos, reportes dinámicos y herramientas intuitivas para la toma de decisiones estratégicas.",
-  image: SaintAnalytics,
-  tech: ["HTML", "JavaScript", "CSS", "Bootstrap"],
-  liveUrl: "https://saintanalytics.com"
-}
-];
+
+
 
 const Portfolio = () => {
-
+  const { t } = useContext(LanguageContext);
+  const projects = [
+    {
+      title: t("portfolio.fidebill.title"),
+      category: t("portfolio.fidebill.category"),
+      description: t("portfolio.fidebill.description"),
+      image: Fidebill,
+      tech: ["React", ".NET", "SQL Server", "Azure"],
+      liveUrl: "https://www.fidebill.com.ar"
+    },
+    {
+      title: t("portfolio.saintAnalytics.title"),
+      category: t("portfolio.saintAnalytics.category"),
+      description: t("portfolio.saintAnalytics.description"),
+      image: SaintAnalytics,
+      tech: ["HTML", "JavaScript", "CSS", "Bootstrap"],
+      liveUrl: "https://saintanalytics.com"
+    }
+    ];
+  
   return (
     <Section
       id="portfolio"
@@ -33,10 +38,10 @@ const Portfolio = () => {
 
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold mb-6">
-          <span className="gradient-text">Nuestro Portfolio</span>
+          <span className="gradient-text">{t("portfolioTitle")}</span>
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          Proyectos que demuestran nuestra expertise en tecnologías de vanguardia y diseño innovador
+          {t("portfolioSubtitle")}
         </p>
       </div>
 
@@ -87,7 +92,7 @@ const Portfolio = () => {
                   <Button asChild variant="neon" size="sm" className="flex-1">
                     <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                       <ExternalLink className="w-4 h-4" />
-                      Ver Proyecto
+                      {t("portfolio.viewPoroject.title")}
                     </a>
                   </Button>
                 </div>

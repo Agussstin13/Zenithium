@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext,useState } from "react";
+import { LanguageContext } from "../../context/LanguageProvider";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button-glow";
 import { Input } from "@/components/ui/input";
@@ -23,6 +24,8 @@ const Contact = () => {
     company: '',
     message: ''
   });
+  const { t } = useContext(LanguageContext);
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,10 +47,10 @@ const Contact = () => {
     >
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold mb-6">
-          <span className="gradient-text">Hablemos</span>
+        <span className="gradient-text">{t("contactTitle")}</span>
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-          ¿Tienes un proyecto en mente? Nos encantaría conocer tu idea y ayudarte a hacerla realidad.
+        {t("contactSubtitle")}
         </p>
       </div>
 
@@ -56,11 +59,10 @@ const Contact = () => {
         <div className="space-y-8">
           <div>
             <h3 className="text-3xl font-bold mb-6 text-foreground">
-              Conecta con <span className="text-accent-neon">Nosotros</span>
+            {t("contactConnect")} <span className="text-accent-neon">{t("contactConnectAccent")}</span>
             </h3>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Estamos aquí para convertir tus ideas en soluciones tecnológicas excepcionales.
-              Contáctanos para una consulta gratuita.
+            {t("contactDescription")}
             </p>
           </div>
 
@@ -70,7 +72,7 @@ const Contact = () => {
                 <Mail className="w-6 h-6 text-accent-neon" />
               </div>
               <div>
-                <div className="font-semibold text-foreground">Email</div>
+                <div className="font-semibold text-foreground">{t("contactEmail")}</div>
                 <div className="text-muted-foreground">zenithiumsolutions@gmail.com</div>
               </div>
             </a>
@@ -80,7 +82,7 @@ const Contact = () => {
                 <Phone className="w-6 h-6 text-accent-purple" />
               </div>
               <div>
-                <div className="font-semibold text-foreground">Teléfono</div>
+                <div className="font-semibold text-foreground">{t("contactPhone")}</div>
                 <div className="text-muted-foreground">+54 9 223 558-2433</div>
               </div>
             </a>
@@ -90,7 +92,7 @@ const Contact = () => {
                 <MapPin className="w-6 h-6 text-accent-pink" />
               </div>
               <div>
-                <div className="font-semibold text-foreground">Ubicación</div>
+                <div className="font-semibold text-foreground">{t("contactLocation")}</div>
                 <div className="text-muted-foreground">Mar Del Plata, Buenos Aires, Argentina</div>
               </div>
             </div>
@@ -98,7 +100,7 @@ const Contact = () => {
 
           {/* Social Links */}
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-foreground">Síguenos</h4>
+            <h4 className="text-lg font-semibold mb-4 text-foreground">{t("contactFollow")}</h4>
             <div className="flex gap-4">
               <Button variant="glass" size="icon" className="hover:text-accent-neon hover:border-accent-neon/50">
                 <a href="https://ar.linkedin.com/company/zenithium" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Zenithium">
@@ -113,7 +115,7 @@ const Contact = () => {
             <a href="https://wa.me/5492235582433" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Zenithium">
               <Button variant="neon" size="lg" className="w-full hover-lift">
                 <Calendar className="w-5 h-5" />
-                Agendar Reunión
+                {t("contactSchedule")}
               </Button>
             </a>
           </div>

@@ -1,10 +1,12 @@
-import { useState } from "react";
+import { useContext,useState } from "react";
+import { LanguageContext } from "../../context/LanguageProvider";
 import { Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button-glow";
 
 export default function ContactForm() {
+  const { t } = useContext(LanguageContext);
   const [submitted, setSubmitted] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
@@ -43,14 +45,14 @@ export default function ContactForm() {
   return (
     <div className="glass-card p-8 hover-glow">
       <h3 className="text-2xl font-bold mb-8 text-foreground">
-        Cuéntanos sobre tu <span className="gradient-text">Proyecto</span>
+        {t("contactFormTitle")} <span className="gradient-text">{t("contactFormAccent")}</span>
       </h3>
 
       <form onSubmit={handleSubmit} className="space-y-6">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
             <label className="text-sm font-medium text-foreground mb-3 block">
-              Nombre *
+              {t("contactFormName")} *
             </label>
             <Input
               name="Nombre"
@@ -61,7 +63,7 @@ export default function ContactForm() {
           </div>
           <div>
             <label className="text-sm font-medium text-foreground mb-3 block">
-              Email *
+              {t("contactFormEmail")} *
             </label>
             <Input
               type="email"
@@ -75,7 +77,7 @@ export default function ContactForm() {
 
         <div>
           <label className="text-sm font-medium text-foreground mb-3 block">
-            Empresa
+            {t("contactFormCompany")}
           </label>
           <Input
             name="Empresa"
@@ -86,7 +88,7 @@ export default function ContactForm() {
 
         <div>
           <label className="text-sm font-medium text-foreground mb-3 block">
-            Mensaje *
+            {t("contactFormMessage")} 
           </label>
           <Textarea
             name="Mensaje"
@@ -104,10 +106,10 @@ export default function ContactForm() {
           className={`w-full hover-lift ${sending || submitted ? "opacity-50 cursor-not-allowed" : ""
             }`}
         >
-          {sending ? "Enviando..." : (
+          {sending ? t("contactFormSending") : (
             <>
               <Send className="w-5 h-5 mr-2" />
-              Enviar Mensaje
+             {t("contactFormSubmit")}
             </>
           )}
         </Button>
@@ -116,18 +118,18 @@ export default function ContactForm() {
       {/* Mensajes de feedback */}
       {submitted && (
         <p className="text-green-600 font-medium text-center mt-4">
-          ¡Gracias por tu mensaje! Te responderemos pronto.
+          {t("contactFormSuccess")}
         </p>
       )}
       {error && (
         <p className="text-red-600 font-medium text-center mt-4">
-          Ocurrió un error al enviar el mensaje. Intentá nuevamente.
+          {t("contactFormError")}
         </p>
       )}
 
       <div className="mt-6 pt-6 border-t border-border/20 text-center">
         <p className="text-sm text-muted-foreground">
-          Te responderemos en menos de 24 horas
+          {t("contactFormResponse")}
         </p>
       </div>
     </div>

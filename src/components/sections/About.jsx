@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { LanguageContext } from "../../context/LanguageProvider";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button-glow";
 import {
@@ -10,11 +12,13 @@ import {
 } from "lucide-react";
 
 const About = () => {
+  const { t } = useContext(LanguageContext);
+
   const stats = [
-    { number: "2+", label: "Años de Experiencia", icon: Award },
-    { number: "10+", label: "Proyectos Completados", icon: Target },
-    { number: "10+", label: "Clientes Satisfechos", icon: Users },
-    { number: "24/7", label: "Soporte Técnico", icon: Zap }
+    { number: "2+", label: t("aboutStats.experience"), icon: Award },
+    { number: "10+", label: t("aboutStats.projects"), icon: Target },
+    { number: "10+", label: t("aboutStats.clients"), icon: Users },
+    { number: "24/7", label: t("aboutStats.support"), icon: Zap }
   ];
 
   const team = [
@@ -65,11 +69,10 @@ const About = () => {
     >
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold mb-6">
-          <span className="gradient-text">Sobre Zenithium</span>
+          <span className="gradient-text">{t("aboutTitle")}</span>
         </h2>
         <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-          Somos un equipo apasionado de desarrolladores y diseñadores comprometidos con transformar ideas
-          innovadoras en soluciones tecnológicas que impulsan el crecimiento de nuestros clientes.
+        {t("aboutSubtitle")}
         </p>
       </div>
 
@@ -100,20 +103,16 @@ const About = () => {
       {/* Mission & Vision */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-20">
         <div className="glass-card p-8 hover-glow">
-          <h3 className="text-2xl font-bold mb-4 text-accent-neon">Nuestra Misión</h3>
+          <h3 className="text-2xl font-bold mb-4 text-accent-neon">{t("aboutMission")}</h3>
           <p className="text-muted-foreground leading-relaxed">
-            Democratizar el acceso a la tecnología de vanguardia, ayudando a empresas de todos los tamaños
-            a digitalizar sus procesos y alcanzar su máximo potencial a través de soluciones innovadoras,
-            escalables y centradas en el usuario.
+            {t("aboutMissionDescription")}
           </p>
         </div>
 
         <div className="glass-card p-8 hover-glow">
-          <h3 className="text-2xl font-bold mb-4 text-accent-purple">Nuestra Visión</h3>
+          <h3 className="text-2xl font-bold mb-4 text-accent-purple">{t("aboutVision")}</h3>
           <p className="text-muted-foreground leading-relaxed">
-            Ser la empresa líder en desarrollo de software en América Latina, reconocida por nuestra
-            excelencia técnica, innovación constante y por construir relaciones duraderas basadas en
-            la confianza y resultados excepcionales.
+            {t("aboutVisionDescription")}
           </p>
         </div>
       </div>
@@ -175,7 +174,7 @@ const About = () => {
           }
         }}>
           <Users className="w-5 h-5" />
-          Únete a Nuestro Equipo
+          {t("aboutCta")}
           <ArrowRight className="w-5 h-5" />
         </Button>
       </div>

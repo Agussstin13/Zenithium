@@ -1,4 +1,5 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { LanguageContext } from "../../context/LanguageProvider";
 import { Button } from "@/components/ui/button-glow";
 import { Menu, X } from "lucide-react";
 import logo from "../../assets/logo.png"
@@ -6,6 +7,8 @@ import logo from "../../assets/logo.png"
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const { language, setLanguage, t } = useContext(LanguageContext);
+
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,11 +20,11 @@ export default function Navigation() {
   }, []);
 
   const navItems = [
-    { label: "Inicio", href: "#hero" },
-    { label: "Servicios", href: "#services" },
-    { label: "Portfolio", href: "#portfolio" },
-    { label: "Nosotros", href: "#about" },
-    { label: "Contacto", href: "#contact" }
+    { label: t("navHome"), href: "#hero" },
+    { label: t("navServices"), href: "#services" },
+    { label: t("navPortfolio"), href: "#portfolio" },
+    { label: t("navAbout"), href: "#about" },
+    { label: t("navContact"), href: "#contact" },
   ];
 
   const scrollToSection = (href) => {
@@ -50,7 +53,8 @@ export default function Navigation() {
             <div className="hidden md:flex items-center space-x-8">
               {navItems.map((item) => (
                 <button
-                  key={item.label}
+                key={item.label}
+                href={item.href}
                   onClick={() => scrollToSection(item.href)}
                   className="text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
                 >
@@ -58,9 +62,13 @@ export default function Navigation() {
                   <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
                 </button>
               ))}
-              <Button variant="hero" size="sm" className="ml-4" onClick={() => scrollToSection('#contact')}>
-                Consulta Gratis
-              </Button>
+              <Button
+              variant="hero"
+              size="sm"
+              onClick={() => setLanguage(language === "es" ? "en" : "es")}
+            >
+              {language === "es" ? "EN" : "ES"}
+            </Button>
             </div>
 
             {/* Mobile menu button */}
