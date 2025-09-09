@@ -56,7 +56,7 @@ export default function ContactForm() {
             </label>
             <Input
               name="Nombre"
-              placeholder="Tu nombre completo"
+              placeholder={t("contactFormNamePlaceholder")}
               className="bg-surface-elevated border-border/50 focus:border-primary"
               required
             />
@@ -68,7 +68,7 @@ export default function ContactForm() {
             <Input
               type="email"
               name="Email"
-              placeholder="tu@email.com"
+              placeholder={t("contactFormEmailPlaceholder")}
               className="bg-surface-elevated border-border/50 focus:border-primary"
               required
             />
@@ -81,7 +81,7 @@ export default function ContactForm() {
           </label>
           <Input
             name="Empresa"
-            placeholder="Nombre de tu empresa (opcional)"
+            placeholder={t("contactFormCompanyPlaceholder")}
             className="bg-surface-elevated border-border/50 focus:border-primary"
           />
         </div>
@@ -92,7 +92,7 @@ export default function ContactForm() {
           </label>
           <Textarea
             name="Mensaje"
-            placeholder="Cuéntanos sobre tu proyecto, necesidades y objetivos..."
+            placeholder={t("contactFormMessagePlaceholder")}
             className="bg-surface-elevated border-border/50 focus:border-primary min-h-[150px] resize-none mb-3"
             required
           />

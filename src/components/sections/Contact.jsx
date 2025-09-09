@@ -8,37 +8,13 @@ import {
   Mail,
   Phone,
   MapPin,
-  Send,
-  MessageCircle,
   Calendar,
   Linkedin,
-  Github,
-  Twitter
 } from "lucide-react";
 import ContactForm from "../myComponents/ContactForm";
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    message: ''
-  });
   const { t } = useContext(LanguageContext);
-
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
-    console.log('Form submitted:', formData);
-  };
-
-  const handleChange = (e) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
 
   return (
     <Section

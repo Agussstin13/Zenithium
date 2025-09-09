@@ -8,8 +8,11 @@ import { Button } from "@/components/ui/button-glow";
 import { Linkedin } from "lucide-react";
 import logo from "../assets/logo.png"
 import WhatsAppButton from "../components/myComponents/WhatsAppButton";
+import { LanguageContext } from "../context/LanguageProvider";
+import { useContext } from "react";
 
 const Index = () => {
+  const { t } = useContext(LanguageContext);
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -33,7 +36,7 @@ const Index = () => {
 
           {/* Descripción */}
           <p className="text-muted-foreground text-sm md:text-base text-center md:text-left flex-1 md:flex-none">
-            Transformando ideas en soluciones tecnológicas de vanguardia
+            {t("footerDescription")}
           </p>
 
           {/* Redes */}
@@ -52,7 +55,7 @@ const Index = () => {
 
           {/* Derechos */}
           <div className="text-sm text-text-dim text-center md:text-left">
-            © 2025 Zenithium. Todos los derechos reservados.
+            {t("footerRights")}
           </div>
         </div>
       </footer>
