@@ -1,9 +1,10 @@
-import { useContext,useState } from "react";
+import { useContext, useState } from "react";
 import { LanguageContext } from "../../context/LanguageProvider";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button-glow";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { FaTiktok } from "react-icons/fa"; // Importa el ícono de TikTok
 import {
   Mail,
   Phone,
@@ -23,10 +24,10 @@ const Contact = () => {
     >
       <div className="text-center mb-16">
         <h2 className="text-5xl md:text-6xl font-bold mb-6">
-        <span className="gradient-text">{t("contactTitle")}</span>
+          <span className="gradient-text">{t("contactTitle")}</span>
         </h2>
         <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-        {t("contactSubtitle")}
+          {t("contactSubtitle")}
         </p>
       </div>
 
@@ -35,10 +36,10 @@ const Contact = () => {
         <div className="space-y-8">
           <div>
             <h3 className="text-3xl font-bold mb-6 text-foreground">
-            {t("contactConnect")} <span className="text-accent-neon">{t("contactConnectAccent")}</span>
+              {t("contactConnect")} <span className="text-accent-neon">{t("contactConnectAccent")}</span>
             </h3>
             <p className="text-muted-foreground text-lg leading-relaxed">
-            {t("contactDescription")}
+              {t("contactDescription")}
             </p>
           </div>
 
@@ -83,6 +84,18 @@ const Contact = () => {
                   <Linkedin className="w-5 h-5" />
                 </a>
               </Button>
+              <Button variant="glass" size="icon" className="hover:text-accent-pink hover:border-accent-pink/50">
+                <a href="https://www.instagram.com/_zenithium_" target="_blank" rel="noopener noreferrer" aria-label="Instagram Zenithium">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 2 .2 2.5.4.6.2 1 .5 1.5 1 .5.5.8.9 1 1.5.2.5.3 1.3.4 2.5.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 2-.4 2.5-.2.6-.5 1-1 1.5-.5.5-.9.8-1.5 1-.5.2-1.3.3-2.5.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-2-.2-2.5-.4-.6-.2-1-.5-1.5-1-.5-.5-.8-.9-1-1.5-.2-.5-.3-1.3-.4-2.5C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-2 .4-2.5.2-.6.5-1 1-1.5.5-.5.9-.8 1.5-1 .5-.2 1.3-.3 2.5-.4C8.4 2.2 8.8 2.2 12 2.2m0-2.2C8.7 0 8.3 0 7 .1 5.7.2 4.6.4 3.8.7c-.9.3-1.7.7-2.4 1.4-.7.7-1.1 1.5-1.4 2.4-.3.8-.5 1.9-.6 3.2C0 8.3 0 8.7 0 12s0 3.7.1 5c.1 1.3.3 2.4.6 3.2.3.9.7 1.7 1.4 2.4.7.7 1.5 1.1 2.4 1.4.8.3 1.9.5 3.2.6 1.3.1 1.7.1 5 .1s3.7 0 5-.1c1.3-.1 2.4-.3 3.2-.6.9-.3 1.7-.7 2.4-1.4.7-.7 1.1-1.5 1.4-2.4.3-.8.5-1.9.6-3.2.1-1.3.1-1.7.1-5s0-3.7-.1-5c-.1-1.3-.3-2.4-.6-3.2-.3-.9-.7-1.7-1.4-2.4-.7-.7-1.5-1.1-2.4-1.4-.8-.3-1.9-.5-3.2-.6C15.7 0 15.3 0 12 0zm0 5.8c-3.4 0-6.2 2.8-6.2 6.2s2.8 6.2 6.2 6.2 6.2-2.8 6.2-6.2-2.8-6.2-6.2-6.2zm0 10.2c-2.2 0-4-1.8-4-4s1.8-4 4-4 4 1.8 4 4-1.8 4-4 4zm6.4-11.6c-.8 0-1.4.6-1.4 1.4s.6 1.4 1.4 1.4 1.4-.6 1.4-1.4-.6-1.4-1.4-1.4z" />
+                  </svg>
+                </a>
+              </Button>
+              <Button variant="glass" size="icon" className="hover:text-accent-purple hover:border-accent-purple/50">
+  <a href="https://www.tiktok.com/@_zenithium_" target="_blank" rel="noopener noreferrer" aria-label="TikTok Zenithium">
+    <FaTiktok className="w-5 h-5" />
+  </a>
+</Button>
             </div>
           </div>
 
@@ -97,7 +110,7 @@ const Contact = () => {
           </div>
         </div>
 
-        <ContactForm/>
+        <ContactForm />
       </div>
     </Section >
   );
