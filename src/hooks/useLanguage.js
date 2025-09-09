@@ -34,14 +34,19 @@ const translations = {
       webDevelopmentDescription: "Creamos aplicaciones web modernas, rápidas y seguras para potenciar tu negocio.",
       cybersecurity: "Ciberseguridad",
       cybersecurityDescription: "Protegemos tus sistemas y datos con soluciones avanzadas de seguridad.",
+      cybersecurityFeatures: ["Auditoría de Seguridad", "Pruebas de Penetración", "Protección de Datos", "Cumplimiento Normativo"],
       cloudSolutions: "Soluciones en la Nube",
       cloudSolutionsDescription: "Migramos y optimizamos tus sistemas en la nube para mayor escalabilidad.",
+      cloudSolutionsFeatures: ["AWS & Azure", "Serverless", "Microservicios", "DevOps"],
       backendApis: "APIs y Backend",
       backendApisDescription: "Desarrollamos APIs robustas y sistemas backend escalables.",
+      backendApisFeatures: ["Node.js & .NET", "PostgreSQL & SQLServer", "Bases de Datos", "Seguridad informática"],
       techConsulting: "Consultoría Tecnológica",
       techConsultingDescription: "Te ayudamos a implementar las mejores prácticas y soluciones tecnológicas.",
+      techConsultingFeatures: ["Auditorias", "Soluciones informáticas", "Arquitectura", "Mejores Prácticas"],
       uiuxDesign: "Diseño UI/UX",
-      uiuxDesignDescription: "Diseñamos interfaces atractivas y experiencias de usuario intuitivas."
+      uiuxDesignDescription: "Diseñamos interfaces atractivas y experiencias de usuario intuitivas.",
+      uiuxDesignFeatures: ["Diseño UI/UX", "Prototipado", "Investigación de Usuario"]
     },
     // Portfolio
     portfolioTitle: "Nuestro Portfolio",
@@ -145,14 +150,19 @@ const translations = {
       webDevelopmentDescription: "We create modern, fast, and secure web applications to boost your business.",
       cybersecurity: "Cybersecurity",
       cybersecurityDescription: "We protect your systems and data with advanced security solutions.",
+      cybersecurityFeatures: ["Security Audit", "Penetration Testing", "Data Protection", "Regulatory Compliance"],
       cloudSolutions: "Cloud Solutions",
       cloudSolutionsDescription: "We migrate and optimize your systems in the cloud for greater scalability.",
+      cloudSolutionsFeatures: ["AWS & Azure", "Serverless", "Microservices", "DevOps"],
       backendApis: "APIs and Backend",
       backendApisDescription: "We develop robust APIs and scalable backend systems.",
+      backendApisFeatures: ["Node.js & .NET", "PostgreSQL & SQL Server", "Databases", "Cybersecurity"],
       techConsulting: "Tech Consulting",
       techConsultingDescription: "We help you implement best practices and technological solutions.",
+      techConsultingFeatures: ["Audits", "IT Solutions", "Architecture", "Best Practices"],
       uiuxDesign: "UI/UX Design",
-      uiuxDesignDescription: "We design attractive interfaces and intuitive user experiences."
+      uiuxDesignDescription: "We design attractive interfaces and intuitive user experiences.",
+      uiuxDesignFeatures: ["UI/UX Design", "Prototyping", "User Research"]
     },
     // Portfolio
     portfolioTitle: "Our Portfolio",

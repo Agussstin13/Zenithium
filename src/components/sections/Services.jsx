@@ -18,31 +18,31 @@ const Services = () => {
       icon: Shield,
       title: t("services.cybersecurity"),
       description: t("services.cybersecurityDescription"),
-      features: ["Auditoría de Seguridad", "Pruebas de Penetración", "Protección de Datos", "Cumplimiento Normativo"],
+      features: t("services.cybersecurityFeatures"),
     },
     {
       icon: Cloud,
       title: t("services.cloudSolutions"),
       description: t("services.cloudSolutionsDescription"),
-      features: ["AWS & Azure", "Serverless", "Microservicios", "DevOps"],
+      features: t("services.cloudSolutionsFeatures"),
     },
     {
       icon: Database,
       title: t("services.backendApis"),
       description: t("services.backendApisDescription"),
-      features: ["Node.js & .NET", "PostgreSQL & SQLServer", "Bases de Datos", "Seguridad informática"],
+      features: t("services.backendApisFeatures"),
     },
     {
       icon: Code2,
       title: t("services.techConsulting"),
       description: t("services.techConsultingDescription"),
-      features: ["Auditorias", "Soluciones informáticas", "Arquitectura", "Mejores Prácticas"],
+      features: t("services.techConsultingFeatures"),
     },
     {
       icon: Palette,
       title: t("services.uiuxDesign"),
       description: t("services.uiuxDesignDescription"),
-      features: ["Diseño UI/UX", "Prototipado", "Investigación de Usuario"],
+      features: t("services.uiuxDesignFeatures"),
     },
   ];
 
