@@ -92,10 +92,10 @@ const Contact = () => {
                 </a>
               </Button>
               <Button variant="glass" size="icon" className="hover:text-accent-purple hover:border-accent-purple/50">
-  <a href="https://www.tiktok.com/@_zenithium_" target="_blank" rel="noopener noreferrer" aria-label="TikTok Zenithium">
-    <FaTiktok className="w-5 h-5" />
-  </a>
-</Button>
+                <a href="https://www.tiktok.com/@_zenithium_" target="_blank" rel="noopener noreferrer" aria-label="TikTok Zenithium">
+                  <FaTiktok className="w-5 h-5" />
+                </a>
+              </Button>
             </div>
           </div>
 
