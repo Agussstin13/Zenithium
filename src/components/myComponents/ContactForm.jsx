@@ -29,7 +29,7 @@ export default function ContactForm() {
 
       if (response.ok) {
         setSubmitted(true);
-        form.reset();
+        e.target.reset();
       } else {
         setError(true);
       }
