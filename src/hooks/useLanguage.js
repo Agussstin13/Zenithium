@@ -6,12 +6,12 @@ const translations = {
     heroAnimatedTexts: [
       "Soluciones tecnológicas",
       "Desarrollo Web",
-      "Sistemas Adaptables", 
+      "Sistemas Adaptables",
       "Software a Medida"
     ],
     // Navigation
     navHome: "Inicio",
-    navServices: "Servicios", 
+    navServices: "Servicios",
     navPortfolio: "Portfolio",
     navAbout: "Nosotros",
     navContact: "Contacto",
@@ -22,7 +22,7 @@ const translations = {
     heroContact: "Contactar Equipo",
     heroStats: {
       projects: "Proyectos Completados",
-      experience: "Años de Experiencia", 
+      experience: "Años de Experiencia",
       support: "Soporte Técnico"
     },
     // Services
@@ -101,13 +101,22 @@ const translations = {
       clients: "Clientes Satisfechos",
       support: "Soporte Técnico"
     },
+    aboutAgustin: "Tech Lead & Founder con experiencia en diseño de arquitecturas escalables y seguras. Lidera equipos en la construcción de soluciones innovadoras utilizando React, .NET y Azure.",
+    aboutJulian: "Especialista en backend y bases de datos, con amplia experiencia en modelado, optimización de consultas y despliegue en entornos cloud. Experto en SQL, .NET y AWS.",
+    aboutTomas: "Full-stack Developer orientado al ecosistema Microsoft y la nube. Integra frontends modernos en React con backends en .NET, priorizando escalabilidad, seguridad y buenas prácticas.",
+    aboutBruno: "Full-stack Developer con foco en la construcción de aplicaciones robustas y mantenibles. Experiencia en React, .NET y desarrollo empresarial con Java y Spring Boot.",
+    aboutMaximo: "Frontend Developer y UX/UI Designer especializado en interfaces limpias, intuitivas y centradas en el usuario. Experto en React, Figma y diseño de experiencias digitales.",
     // ContactForm
     contactFormTitle: "Cuéntanos sobre tu",
     contactFormAccent: "Proyecto",
     contactFormName: "Nombre",
+    contactFormNamePlaceholder: "Tu nombre completo",
     contactFormEmail: "Email",
+    contactFormEmailPlaceholder: "tu@email.com",
     contactFormCompany: "Empresa",
+    contactFormCompanyPlaceholder: "Nombre de tu empresa (opcional)",
     contactFormMessage: "Mensaje *",
+    contactFormMessagePlaceholder: "Cuéntanos sobre tu proyecto, necesidades y objetivos...",
     contactFormSubmit: "Enviar Mensaje",
     contactFormSending: "Enviando...",
     contactFormSuccess: "¡Gracias por tu mensaje! Te responderemos pronto.",
@@ -115,20 +124,24 @@ const translations = {
     contactFormResponse: "Te responderemos en menos de 24 horas",
 
     // WhatsAppButton
-    whatsappHoverText: "¡Chateá con nosotros!"
+    whatsappHoverText: "¡Chateá con nosotros!",
+
+    // Footer
+    footerDescription: "Transformando ideas en soluciones tecnológicas de vanguardia",
+    footerRights: "© 2025 Zenithium. Todos los derechos reservados."
   },
   en: {
     // Hero
     heroAnimatedTexts: [
       "Tech Solutions",
-      "Web Development", 
+      "Web Development",
       "Adaptive Systems",
       "Custom Software"
     ],
     // Navigation
     navHome: "Home",
     navServices: "Services",
-    navPortfolio: "Portfolio", 
+    navPortfolio: "Portfolio",
     navAbout: "About",
     navContact: "Contact",
     navCta: "Free Consultation",
@@ -217,13 +230,22 @@ const translations = {
       clients: "Satisfied Clients",
       support: "Technical Support"
     },
+    aboutAgustin: "Tech Lead & Founder with experience in designing scalable and secure architectures. Leads teams in building innovative solutions using React, .NET, and Azure.",
+    aboutJulian: "Backend and database specialist with extensive experience in modeling, query optimization, and deployment in cloud environments. Expert in SQL, .NET, and AWS.",
+    aboutTomas: "Full-stack Developer focused on the Microsoft ecosystem and cloud. Integrates modern React frontends with .NET backends, prioritizing scalability, security, and best practices.",
+    aboutBruno: "Full-stack Developer focused on building robust and maintainable applications. Experienced in React, .NET, and enterprise development with Java and Spring Boot.",
+    aboutMaximo: "Frontend Developer and UX/UI Designer specialized in clean, intuitive, and user-centered interfaces. Expert in React, Figma, and digital experience design.",
     // ContactForm
     contactFormTitle: "Tell us about your",
     contactFormAccent: "Project",
     contactFormName: "Name",
+    contactFormNamePlaceholder: "Your full name",
     contactFormEmail: "Email",
+    contactFormEmailPlaceholder: "your@email.com",
     contactFormCompany: "Company",
+    contactFormCompanyPlaceholder: "Your company name (optional)",
     contactFormMessage: "Message *",
+    contactFormMessagePlaceholder: "Tell us about your project, needs, and goals...",
     contactFormSubmit: "Send Message",
     contactFormSending: "Sending...",
     contactFormSuccess: "Thank you for your message! We will get back to you soon.",
@@ -231,7 +253,11 @@ const translations = {
     contactFormResponse: "We will respond within 24 hours",
 
     // WhatsAppButton
-    whatsappHoverText: "Chat with us!"
+    whatsappHoverText: "Chat with us!",
+
+    // Footer
+    footerDescription: "Transforming ideas into cutting-edge technology solutions",
+    footerRights: "© 2025 Zenithium. All rights reserved."
   }
 };
 
@@ -247,11 +273,11 @@ export const useLanguage = () => {
   const t = (key) => {
     const keys = key.split('.');
     let value = translations[language];
-    
+
     for (const k of keys) {
       value = value?.[k];
     }
-    
+
     return value || key;
   };
 
