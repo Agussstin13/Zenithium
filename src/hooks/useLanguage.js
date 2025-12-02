@@ -101,6 +101,8 @@ const translations = {
       clients: "Clientes Satisfechos",
       support: "Soporte Técnico"
     },
+    aboutTeam: "Conoce a Nuestro",
+    aboutTeam2: "Equipo",
     aboutAgustin: "Tech Lead & Founder con experiencia en diseño de arquitecturas escalables y seguras. Lidera equipos en la construcción de soluciones innovadoras utilizando React, .NET y Azure.",
     aboutJulian: "Especialista en backend y bases de datos, con amplia experiencia en modelado, optimización de consultas y despliegue en entornos cloud. Experto en SQL, .NET y AWS.",
     aboutTomas: "Full-stack Developer orientado al ecosistema Microsoft y la nube. Integra frontends modernos en React con backends en .NET, priorizando escalabilidad, seguridad y buenas prácticas.",
@@ -230,6 +232,8 @@ const translations = {
       clients: "Satisfied Clients",
       support: "Technical Support"
     },
+    aboutTeam: "Meet Our",
+    aboutTeam2: "Team",
     aboutAgustin: "Tech Lead & Founder with experience in designing scalable and secure architectures. Leads teams in building innovative solutions using React, .NET, and Azure.",
     aboutJulian: "Backend and database specialist with extensive experience in modeling, query optimization, and deployment in cloud environments. Expert in SQL, .NET, and AWS.",
     aboutTomas: "Full-stack Developer focused on the Microsoft ecosystem and cloud. Integrates modern React frontends with .NET backends, prioritizing scalability, security, and best practices.",

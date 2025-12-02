@@ -10,7 +10,7 @@ import logo from "../assets/logo.png"
 import WhatsAppButton from "../components/myComponents/WhatsAppButton";
 import { LanguageContext } from "../context/LanguageProvider";
 import { useContext } from "react";
-import { FaTiktok } from "react-icons/fa"; // Importa el ícono de TikTok
+import { FaTiktok } from "react-icons/fa";
 
 const Index = () => {
   const { t } = useContext(LanguageContext);

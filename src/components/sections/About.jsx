@@ -120,7 +120,7 @@ const About = () => {
       {/* Team Section */}
       <div className="mb-16">
         <h3 className="text-3xl md:text-4xl font-bold mb-12 text-center">
-          Conoce a Nuestro <span className="gradient-text">Equipo</span>
+          {t("aboutTeam")} <span className="gradient-text">{t("aboutTeam2")}</span>
         </h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
