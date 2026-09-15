@@ -71,6 +71,13 @@ const translations = {
         description: "Tienda online de alimentos saludables y productos naturales para El Molino, con catálogo, búsqueda de productos y una experiencia de compra adaptable.",
         imageAlt: "Captura del inicio de la tienda online de El Molino desarrollada por Zenithium"
       },
+      mia: {
+        title: "Mia",
+        category: "Automatización con IA",
+        description: "Asistente de turnos para negocios de servicios que automatiza consultas y reservas por WhatsApp, con agenda propia, reglas configurables y un panel para supervisar conversaciones y turnos.",
+        imageAlt: "Inicio de Mia, asistente de turnos por WhatsApp desarrollado por Zenithium",
+        tech: ["IA", "WhatsApp", "PostgreSQL", "Automatización"]
+      },
       viewProject: {
         title: "Ver Proyecto"
       }
@@ -213,6 +220,13 @@ const translations = {
         category: "Online Store",
         description: "An online store for El Molino's healthy foods and natural products, featuring a catalog, product search, and a responsive shopping experience.",
         imageAlt: "Homepage of the El Molino online store developed by Zenithium"
+      },
+      mia: {
+        title: "Mia",
+        category: "AI Automation",
+        description: "An appointment assistant for service businesses that automates inquiries and bookings through WhatsApp, with its own calendar, configurable rules, and a dashboard for supervising conversations and appointments.",
+        imageAlt: "Mia WhatsApp appointment assistant homepage developed by Zenithium",
+        tech: ["AI", "WhatsApp", "PostgreSQL", "Automation"]
       },
       viewProject: {
         title: "View Project"

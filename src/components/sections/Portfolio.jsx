@@ -6,6 +6,7 @@ import { ExternalLink } from "lucide-react";
 import Fidebill from "@/assets/Fidebill.png";
 import SaintAnalytics from "@/assets/SaintAnalytics.png";
 import ElMolino from "@/assets/ElMolino.jpg";
+import Mia from "@/assets/Mia.png";
 
 export default function Portfolio() {
   const { t } = useContext(LanguageContext);
@@ -36,6 +37,15 @@ export default function Portfolio() {
       image: ElMolino,
       tech: ["React", "Vite", "CSS", "SEO"],
       liveUrl: "https://elmolinomdp.com.ar/",
+    },
+    {
+      title: t("portfolio.mia.title"),
+      category: t("portfolio.mia.category"),
+      description: t("portfolio.mia.description"),
+      imageAlt: t("portfolio.mia.imageAlt"),
+      image: Mia,
+      tech: t("portfolio.mia.tech"),
+      liveUrl: "https://soymia.com.ar/",
     },
   ];
 

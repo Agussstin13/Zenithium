@@ -19,6 +19,7 @@ Zenithium Solutions es una empresa de desarrollo de software ubicada en Mar del 
 - [Fidebill](https://www.fidebill.com.ar/): Plataforma digital de fidelización con promociones, puntos, transacciones y ubicación de locales.
 - [Saint Analytics](https://saintanalytics.com/): Aplicación web de análisis de datos con dashboards y reportes para instituciones.
 - [El Molino](https://elmolinomdp.com.ar/): Tienda online de alimentos saludables y productos naturales con catálogo y búsqueda de productos.
+- [Mia](https://soymia.com.ar/): Asistente con inteligencia artificial para automatizar consultas y turnos por WhatsApp, con agenda propia y reglas configurables.
 
 ## Contacto oficial
 
