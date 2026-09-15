@@ -5,9 +5,7 @@ import { Button } from "@/components/ui/button-glow";
 import { ExternalLink } from "lucide-react";
 import Fidebill from "@/assets/Fidebill.png";
 import SaintAnalytics from "@/assets/SaintAnalytics.png";
-
-
-
+import ElMolino from "@/assets/ElMolino.jpg";
 
 const Portfolio = () => {
   const { t } = useContext(LanguageContext);
@@ -16,89 +14,89 @@ const Portfolio = () => {
       title: t("portfolio.fidebill.title"),
       category: t("portfolio.fidebill.category"),
       description: t("portfolio.fidebill.description"),
+      imageAlt: t("portfolio.fidebill.imageAlt"),
       image: Fidebill,
       tech: ["React", ".NET", "SQL Server", "Azure"],
-      liveUrl: "https://www.fidebill.com.ar"
+      liveUrl: "https://www.fidebill.com.ar",
     },
     {
       title: t("portfolio.saintAnalytics.title"),
       category: t("portfolio.saintAnalytics.category"),
       description: t("portfolio.saintAnalytics.description"),
+      imageAlt: t("portfolio.saintAnalytics.imageAlt"),
       image: SaintAnalytics,
       tech: ["HTML", "JavaScript", "CSS", "Bootstrap"],
-      liveUrl: "https://saintanalytics.com"
-    }
-    ];
-  
-  return (
-    <Section
-      id="portfolio"
-      className="relative bg-gradient-to-b from-[hsl(var(--background)/0.1)] to-[hsl(var(--surface)/0.1)] backdrop-blur-sm"
-    >
+      liveUrl: "https://saintanalytics.com",
+    },
+    {
+      title: t("portfolio.elMolino.title"),
+      category: t("portfolio.elMolino.category"),
+      description: t("portfolio.elMolino.description"),
+      imageAlt: t("portfolio.elMolino.imageAlt"),
+      image: ElMolino,
+      tech: ["React", "Vite", "CSS", "SEO"],
+      liveUrl: "https://elmolinomdp.com.ar/",
+    },
+  ];
 
-      <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-bold mb-6">
+  return (
+    <Section id="portfolio" className="overflow-hidden">
+      <div className="relative mb-14 text-center lg:mb-16">
+        <h2 className="section-heading">
           <span className="gradient-text">{t("portfolioTitle")}</span>
         </h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+        <p className="mx-auto mt-6 max-w-3xl text-base leading-7 text-muted-foreground lg:text-lg">
           {t("portfolioSubtitle")}
         </p>
       </div>
 
-      {/* Featured Projects */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
+      <div className="space-y-6 lg:space-y-8">
         {projects.map((project, index) => (
-          <div
+          <article
             key={project.title}
-            className="group relative glass-card overflow-hidden hover-glow hover-lift transition-all duration-500"
-            style={{ animationDelay: `${index * 0.2}s` }}
+            className="glass-card group grid overflow-hidden lg:grid-cols-[1.12fr_0.88fr] lg:p-3"
           >
-            <div className="relative h-64 overflow-hidden">
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`relative min-h-[260px] overflow-hidden bg-[#090b48] sm:min-h-[360px] lg:min-h-[460px] lg:rounded-[1.15rem] ${index % 2 ? "lg:order-2" : ""}`}
+              aria-label={`${t("portfolio.viewProject.title")}: ${project.title}`}
+            >
               <img
                 src={project.image}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                alt={project.imageAlt}
+                loading="lazy"
+                decoding="async"
+                className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-[1.035]"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent" />
-            </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#030541]/45 via-transparent to-transparent" />
+              <span className="absolute right-5 top-5 flex h-11 w-11 items-center justify-center rounded-full border border-white/15 bg-[#030541]/70 text-white backdrop-blur-md transition group-hover:bg-accent-neon group-hover:text-background">
+                <ExternalLink className="h-4 w-4" />
+              </span>
+            </a>
 
-            <div className="p-8">
-              <div className="flex items-center gap-2 mb-3">
-                <span className="text-xs font-semibold text-primary bg-surface-elevated px-2 py-1 rounded-full border border-primary/20">
-                  {project.category}
-                </span>
-              </div>
-
-              <h3 className="text-2xl font-bold mb-3 text-foreground group-hover:text-glow transition-colors">
-                {project.title}
-              </h3>
-
-              <p className="text-muted-foreground mb-6 leading-relaxed">
-                {project.description}
-              </p>
-
-              <div className="flex flex-wrap gap-2 mb-6">
+            <div className={`flex flex-col justify-center p-7 sm:p-10 lg:p-12 ${index % 2 ? "lg:order-1" : ""}`}>
+              <span className="mb-6 w-fit rounded-full border border-accent-neon/20 bg-accent-neon/10 px-3 py-1.5 text-[11px] font-semibold text-accent-neon">
+                {project.category}
+              </span>
+              <h3 className="text-3xl font-semibold tracking-[-0.045em] text-white sm:text-4xl">{project.title}</h3>
+              <p className="mt-5 text-sm leading-7 text-muted-foreground sm:text-base">{project.description}</p>
+              <div className="mt-7 flex flex-wrap gap-2">
                 {project.tech.map((tech) => (
-                  <span
-                    key={tech}
-                    className="text-xs bg-surface-elevated px-3 py-1 rounded-full text-text-dim border border-border/50"
-                  >
+                  <span key={tech} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[11px] text-[#c9c4d6]">
                     {tech}
                   </span>
                 ))}
               </div>
-
-                <div className="flex gap-3">
-                  <Button asChild variant="neon" size="sm" className="flex-1">
-                    <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-                      <ExternalLink className="w-4 h-4" />
-                      {t("portfolio.viewPoroject.title")}
-                    </a>
-                  </Button>
-                </div>
-
+              <Button asChild variant="neon" size="lg" className="mt-9 w-fit group/button">
+                <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+                  {t("portfolio.viewProject.title")}
+                  <ExternalLink className="h-4 w-4 transition-transform group-hover/button:translate-x-0.5 group-hover/button:-translate-y-0.5" />
+                </a>
+              </Button>
             </div>
-          </div>
+          </article>
         ))}
       </div>
     </Section>

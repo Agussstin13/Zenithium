@@ -1,4 +1,4 @@
-import { useContext,useState } from "react";
+import { useContext, useState } from "react";
 import { LanguageContext } from "../../context/LanguageProvider";
 import { Send } from "lucide-react";
 import { Input } from "@/components/ui/input";
@@ -11,25 +11,22 @@ export default function ContactForm() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (event) => {
     try {
-      e.preventDefault();
+      event.preventDefault();
       setSending(true);
       setError(false);
 
-      let formData = new FormData(e.target);
-
-      let response = await fetch("https://formspree.io/f/xyzjlvog", {
+      const formData = new FormData(event.currentTarget);
+      const response = await fetch("https://formspree.io/f/xyzjlvog", {
         method: "POST",
         body: formData,
-        headers: {
-          Accept: "application/json",
-        },
+        headers: { Accept: "application/json" },
       });
 
       if (response.ok) {
         setSubmitted(true);
-        e.target.reset();
+        event.target.reset();
       } else {
         setError(true);
       }
@@ -39,98 +36,53 @@ export default function ContactForm() {
     } finally {
       setSending(false);
     }
-
   };
 
+  const fieldClass = "h-12 rounded-2xl border-white/10 bg-white/[0.045] px-4 text-white placeholder:text-white/30 focus-visible:border-accent-neon/50 focus-visible:ring-1 focus-visible:ring-accent-neon focus-visible:ring-offset-0";
+
   return (
-    <div className="glass-card p-8 hover-glow">
-      <h3 className="text-2xl font-bold mb-8 text-foreground">
+    <div className="border-t border-white/10 bg-white/[0.035] p-7 sm:p-10 lg:border-l lg:border-t-0 lg:p-12">
+      <h3 className="text-2xl font-semibold tracking-[-0.04em] text-white sm:text-3xl">
         {t("contactFormTitle")} <span className="gradient-text">{t("contactFormAccent")}</span>
       </h3>
 
-      <form onSubmit={handleSubmit} className="space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <form onSubmit={handleSubmit} className="mt-9 space-y-5">
+        <div className="grid gap-5 sm:grid-cols-2">
           <div>
-            <label className="text-sm font-medium text-foreground mb-3 block">
-              {t("contactFormName")} *
-            </label>
-            <Input
-              name="Nombre"
-              placeholder={t("contactFormNamePlaceholder")}
-              className="bg-surface-elevated border-border/50 focus:border-primary"
-              required
-            />
+            <label htmlFor="contact-name" className="mb-2 block text-xs font-medium text-[#c9c4d6]">{t("contactFormName")} *</label>
+            <Input id="contact-name" name="Nombre" placeholder={t("contactFormNamePlaceholder")} className={fieldClass} required />
           </div>
           <div>
-            <label className="text-sm font-medium text-foreground mb-3 block">
-              {t("contactFormEmail")} *
-            </label>
-            <Input
-              type="email"
-              name="Email"
-              placeholder={t("contactFormEmailPlaceholder")}
-              className="bg-surface-elevated border-border/50 focus:border-primary"
-              required
-            />
+            <label htmlFor="contact-email" className="mb-2 block text-xs font-medium text-[#c9c4d6]">{t("contactFormEmail")} *</label>
+            <Input id="contact-email" type="email" name="Email" placeholder={t("contactFormEmailPlaceholder")} className={fieldClass} required />
           </div>
         </div>
 
         <div>
-          <label className="text-sm font-medium text-foreground mb-3 block">
-            {t("contactFormCompany")}
-          </label>
-          <Input
-            name="Empresa"
-            placeholder={t("contactFormCompanyPlaceholder")}
-            className="bg-surface-elevated border-border/50 focus:border-primary"
-          />
+          <label htmlFor="contact-company" className="mb-2 block text-xs font-medium text-[#c9c4d6]">{t("contactFormCompany")}</label>
+          <Input id="contact-company" name="Empresa" placeholder={t("contactFormCompanyPlaceholder")} className={fieldClass} />
         </div>
 
         <div>
-          <label className="text-sm font-medium text-foreground mb-3 block">
-            {t("contactFormMessage")} 
-          </label>
-          <Textarea
-            name="Mensaje"
-            placeholder={t("contactFormMessagePlaceholder")}
-            className="bg-surface-elevated border-border/50 focus:border-primary min-h-[150px] resize-none mb-3"
-            required
-          />
+          <label htmlFor="contact-message" className="mb-2 block text-xs font-medium text-[#c9c4d6]">{t("contactFormMessage")}</label>
+          <Textarea id="contact-message" name="Mensaje" placeholder={t("contactFormMessagePlaceholder")} className={`${fieldClass} min-h-[156px] resize-none py-4`} required />
         </div>
 
-        <Button
-          type="submit"
-          disabled={sending || submitted}
-          variant="hero"
-          size="lg"
-          className={`w-full hover-lift ${sending || submitted ? "opacity-50 cursor-not-allowed" : ""
-            }`}
-        >
+        <Button type="submit" disabled={sending || submitted} variant="hero" size="lg" className="w-full">
           {sending ? t("contactFormSending") : (
             <>
-              <Send className="w-5 h-5 mr-2" />
-             {t("contactFormSubmit")}
+              {t("contactFormSubmit")}
+              <Send className="h-4 w-4" />
             </>
           )}
         </Button>
       </form>
 
-      {/* Mensajes de feedback */}
-      {submitted && (
-        <p className="text-green-600 font-medium text-center mt-4">
-          {t("contactFormSuccess")}
-        </p>
-      )}
-      {error && (
-        <p className="text-red-600 font-medium text-center mt-4">
-          {t("contactFormError")}
-        </p>
-      )}
+      {submitted && <p role="status" className="mt-4 text-center text-sm font-medium text-accent-neon">{t("contactFormSuccess")}</p>}
+      {error && <p role="alert" className="mt-4 text-center text-sm font-medium text-red-400">{t("contactFormError")}</p>}
 
-      <div className="mt-6 pt-6 border-t border-border/20 text-center">
-        <p className="text-sm text-muted-foreground">
-          {t("contactFormResponse")}
-        </p>
+      <div className="mt-6 border-t border-white/10 pt-5 text-center text-[11px] text-muted-foreground">
+        {t("contactFormResponse")}
       </div>
     </div>
   );

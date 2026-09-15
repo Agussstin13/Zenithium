@@ -1,0 +1,15 @@
+# Zenithium Solutions
+
+> Zenithium Solutions es una empresa de Mar del Plata, Argentina, que desarrolla software a medida, sitios web y landing pages, integraciones, APIs, backends, bases de datos, automatizaciones y soluciones de inteligencia artificial para empresas.
+
+La información de este archivo resume únicamente los servicios y datos publicados por Zenithium Solutions. Para consultas comerciales, escribir a zenithiumsolutions@gmail.com o comunicarse al +54 9 223 558-2433.
+
+## Información principal
+
+- [Zenithium Solutions](https://zenithium.com.ar/): Sitio oficial, servicios, portfolio, equipo y contacto.
+- [Descripción para asistentes](https://zenithium.com.ar/zenithium.md): Resumen en formato Markdown de la empresa, sus servicios y proyectos publicados.
+
+## Información legal
+
+- [Términos y Condiciones](https://zenithium.com.ar/terminos-y-condiciones/): Condiciones aplicables a los servicios de Zenithium Solutions.
+- [Política de Privacidad](https://zenithium.com.ar/politica-de-privacidad/): Tratamiento de datos personales y canales de contacto.

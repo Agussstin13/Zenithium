@@ -4,10 +4,10 @@ const translations = {
   es: {
     // Hero
     heroAnimatedTexts: [
-      "Soluciones tecnológicas",
-      "Desarrollo Web",
-      "Sistemas Adaptables",
-      "Software a Medida"
+      "Desarrollo de Software",
+      "Integraciones y APIs",
+      "Automatización e IA",
+      "Webs y Landing Pages"
     ],
     // Navigation
     navHome: "Inicio",
@@ -16,8 +16,8 @@ const translations = {
     navAbout: "Nosotros",
     navContact: "Contacto",
     navCta: "Consulta Gratis",
-    heroSubtitle: "Transformamos ideas innovadoras en soluciones tecnológicas de vanguardia.",
-    heroSubtitleAccent: " Especialistas en desarrollo web y cloud.",
+    heroSubtitle: "Desarrollamos software a medida para empresas: aplicaciones web, landing pages, integraciones, APIs, bases de datos, automatizaciones y soluciones de inteligencia artificial.",
+    heroSubtitleAccent: " De la idea a producción, con foco en seguridad y escalabilidad.",
     heroProjects: "Ver Nuestros Proyectos",
     heroContact: "Contactar Equipo",
     heroStats: {
@@ -26,24 +26,25 @@ const translations = {
       support: "Soporte Técnico"
     },
     // Services
-    servicesTitle: "Nuestros Servicios",
-    servicesSubtitle: "Ofrecemos soluciones tecnológicas completas para llevar tu negocio al siguiente nivel digital",
+    servicesTitle: "Servicios de Software",
+    servicesSubtitle: "Zenithium Solutions ofrece desarrollo de software a medida, desarrollo web, landing pages, integraciones, APIs, bases de datos, automatizaciones y soluciones de inteligencia artificial para empresas.",
     servicesCta: "Consulta Gratuita",
     services: {
-      webDevelopment: "Desarrollo Web",
-      webDevelopmentDescription: "Creamos aplicaciones web modernas, rápidas y seguras para potenciar tu negocio.",
+      webDevelopment: "Desarrollo Web y Landing Pages",
+      webDevelopmentDescription: "Creamos sitios corporativos, landing pages y aplicaciones web rápidas, seguras y orientadas a convertir visitas en oportunidades.",
+      webDevelopmentFeatures: ["Landing Pages", "Sitios Web", "Aplicaciones Web", "PWA"],
       cybersecurity: "Ciberseguridad",
       cybersecurityDescription: "Protegemos tus sistemas y datos con soluciones avanzadas de seguridad.",
       cybersecurityFeatures: ["Auditoría de Seguridad", "Pruebas de Penetración", "Protección de Datos", "Cumplimiento Normativo"],
       cloudSolutions: "Soluciones en la Nube",
       cloudSolutionsDescription: "Migramos y optimizamos tus sistemas en la nube para mayor escalabilidad.",
       cloudSolutionsFeatures: ["AWS & Azure", "Serverless", "Microservicios", "DevOps"],
-      backendApis: "APIs y Backend",
-      backendApisDescription: "Desarrollamos APIs robustas y sistemas backend escalables.",
-      backendApisFeatures: ["Node.js & .NET", "PostgreSQL & SQLServer", "Bases de Datos", "Seguridad informática"],
-      techConsulting: "Consultoría Tecnológica",
-      techConsultingDescription: "Te ayudamos a implementar las mejores prácticas y soluciones tecnológicas.",
-      techConsultingFeatures: ["Auditorias", "Soluciones informáticas", "Arquitectura", "Mejores Prácticas"],
+      backendApis: "Integraciones, APIs y Backend",
+      backendApisDescription: "Conectamos sistemas y desarrollamos APIs, backends y bases de datos robustas, seguras y escalables.",
+      backendApisFeatures: ["Integraciones", "APIs REST", "PostgreSQL & SQL Server", "Node.js & .NET"],
+      techConsulting: "Automatizaciones e Inteligencia Artificial",
+      techConsultingDescription: "Automatizamos procesos e incorporamos soluciones de IA para reducir tareas manuales y mejorar la operación.",
+      techConsultingFeatures: ["Automatización de Procesos", "Integraciones", "Soluciones de IA", "Consultoría Tecnológica"],
       uiuxDesign: "Diseño UI/UX",
       uiuxDesignDescription: "Diseñamos interfaces atractivas y experiencias de usuario intuitivas.",
       uiuxDesignFeatures: ["Diseño UI/UX", "Prototipado", "Investigación de Usuario"]
@@ -55,14 +56,22 @@ const translations = {
       fidebill: {
         title: "Fidebill",
         category: "Fidelización de clientes",
-        description: "Plataforma digital de fidelización que permite a los clientes visualizar promociones, puntos acumulados, historial de transacciones y ubicación de locales, ofreciendo a las empresas una herramienta eficaz para fortalecer la relación con sus consumidores."
+        description: "Plataforma digital de fidelización que permite a los clientes visualizar promociones, puntos acumulados, historial de transacciones y ubicación de locales, ofreciendo a las empresas una herramienta eficaz para fortalecer la relación con sus consumidores.",
+        imageAlt: "Interfaz de la plataforma de fidelización Fidebill desarrollada por Zenithium"
       },
       saintAnalytics: {
         title: "Saint Analytics",
         category: "Análisis estadístico",
-        description: "Aplicación web de análisis de datos que facilita la gestión y visualización de estadísticas para instituciones, integrando dashboards interactivos, reportes dinámicos y herramientas intuitivas para la toma de decisiones estratégicas."
+        description: "Aplicación web de análisis de datos que facilita la gestión y visualización de estadísticas para instituciones, integrando dashboards interactivos, reportes dinámicos y herramientas intuitivas para la toma de decisiones estratégicas.",
+        imageAlt: "Dashboard de análisis de datos Saint Analytics desarrollado por Zenithium"
       },
-      viewPoroject: {
+      elMolino: {
+        title: "El Molino",
+        category: "Tienda online",
+        description: "Tienda online de alimentos saludables y productos naturales para El Molino, con catálogo, búsqueda de productos y una experiencia de compra adaptable.",
+        imageAlt: "Captura del inicio de la tienda online de El Molino desarrollada por Zenithium"
+      },
+      viewProject: {
         title: "Ver Proyecto"
       }
     },
@@ -130,15 +139,18 @@ const translations = {
 
     // Footer
     footerDescription: "Transformando ideas en soluciones tecnológicas de vanguardia",
-    footerRights: "© 2025 Zenithium. Todos los derechos reservados."
+    footerLegalNav: "Información legal",
+    footerTerms: "Términos y Condiciones",
+    footerPrivacy: "Política de Privacidad",
+    footerRights: "© 2026 Zenithium. Todos los derechos reservados."
   },
   en: {
     // Hero
     heroAnimatedTexts: [
-      "Tech Solutions",
-      "Web Development",
-      "Adaptive Systems",
-      "Custom Software"
+      "Software Development",
+      "Integrations and APIs",
+      "Automation and AI",
+      "Websites and Landing Pages"
     ],
     // Navigation
     navHome: "Home",
@@ -147,8 +159,8 @@ const translations = {
     navAbout: "About",
     navContact: "Contact",
     navCta: "Free Consultation",
-    heroSubtitle: "We transform innovative ideas into cutting-edge technological solutions.",
-    heroSubtitleAccent: " Specialists in web development and cloud.",
+    heroSubtitle: "We develop custom software for businesses: web applications, landing pages, integrations, APIs, databases, automation, and artificial intelligence solutions.",
+    heroSubtitleAccent: " From idea to production, with a focus on security and scalability.",
     heroProjects: "View Our Projects",
     heroContact: "Contact Team",
     heroStats: {
@@ -157,24 +169,25 @@ const translations = {
       support: "Technical Support"
     },
     // Services
-    servicesTitle: "Our Services",
-    servicesSubtitle: "We offer complete technological solutions to take your business to the next digital level",
+    servicesTitle: "Software Services",
+    servicesSubtitle: "Zenithium Solutions provides custom software development, web development, landing pages, integrations, APIs, databases, automation, and artificial intelligence solutions for businesses.",
     servicesCta: "Free Consultation",
     services: {
-      webDevelopment: "Web Development",
-      webDevelopmentDescription: "We create modern, fast, and secure web applications to boost your business.",
+      webDevelopment: "Web Development and Landing Pages",
+      webDevelopmentDescription: "We create corporate websites, landing pages, and fast, secure web applications designed to turn visits into opportunities.",
+      webDevelopmentFeatures: ["Landing Pages", "Websites", "Web Applications", "PWA"],
       cybersecurity: "Cybersecurity",
       cybersecurityDescription: "We protect your systems and data with advanced security solutions.",
       cybersecurityFeatures: ["Security Audit", "Penetration Testing", "Data Protection", "Regulatory Compliance"],
       cloudSolutions: "Cloud Solutions",
       cloudSolutionsDescription: "We migrate and optimize your systems in the cloud for greater scalability.",
       cloudSolutionsFeatures: ["AWS & Azure", "Serverless", "Microservices", "DevOps"],
-      backendApis: "APIs and Backend",
-      backendApisDescription: "We develop robust APIs and scalable backend systems.",
-      backendApisFeatures: ["Node.js & .NET", "PostgreSQL & SQL Server", "Databases", "Cybersecurity"],
-      techConsulting: "Tech Consulting",
-      techConsultingDescription: "We help you implement best practices and technological solutions.",
-      techConsultingFeatures: ["Audits", "IT Solutions", "Architecture", "Best Practices"],
+      backendApis: "Integrations, APIs, and Backend",
+      backendApisDescription: "We connect systems and develop robust, secure, and scalable APIs, backends, and databases.",
+      backendApisFeatures: ["Integrations", "REST APIs", "PostgreSQL & SQL Server", "Node.js & .NET"],
+      techConsulting: "Automation and Artificial Intelligence",
+      techConsultingDescription: "We automate processes and incorporate AI solutions to reduce manual work and improve operations.",
+      techConsultingFeatures: ["Process Automation", "Integrations", "AI Solutions", "Tech Consulting"],
       uiuxDesign: "UI/UX Design",
       uiuxDesignDescription: "We design attractive interfaces and intuitive user experiences.",
       uiuxDesignFeatures: ["UI/UX Design", "Prototyping", "User Research"]
@@ -186,14 +199,22 @@ const translations = {
       fidebill: {
         title: "Fidebill",
         category: "Customer Loyalty",
-        description: "A digital loyalty platform that allows customers to view promotions, accumulated points, transaction history, and store locations, providing companies with an effective tool to strengthen relationships with their consumers."
+        description: "A digital loyalty platform that allows customers to view promotions, accumulated points, transaction history, and store locations, providing companies with an effective tool to strengthen relationships with their consumers.",
+        imageAlt: "Fidebill customer loyalty platform interface developed by Zenithium"
       },
       saintAnalytics: {
         title: "Saint Analytics",
         category: "Statistical Analysis",
-        description: "A web application for data analysis that facilitates the management and visualization of statistics for institutions, integrating interactive dashboards, dynamic reports, and intuitive tools for strategic decision-making."
+        description: "A web application for data analysis that facilitates the management and visualization of statistics for institutions, integrating interactive dashboards, dynamic reports, and intuitive tools for strategic decision-making.",
+        imageAlt: "Saint Analytics data dashboard developed by Zenithium"
       },
-      viewPoroject: {
+      elMolino: {
+        title: "El Molino",
+        category: "Online Store",
+        description: "An online store for El Molino's healthy foods and natural products, featuring a catalog, product search, and a responsive shopping experience.",
+        imageAlt: "Homepage of the El Molino online store developed by Zenithium"
+      },
+      viewProject: {
         title: "View Project"
       }
     },
@@ -261,7 +282,10 @@ const translations = {
 
     // Footer
     footerDescription: "Transforming ideas into cutting-edge technology solutions",
-    footerRights: "© 2025 Zenithium. All rights reserved."
+    footerLegalNav: "Legal information",
+    footerTerms: "Terms and Conditions",
+    footerPrivacy: "Privacy Policy",
+    footerRights: "© 2026 Zenithium. All rights reserved."
   }
 };
 
@@ -273,6 +297,10 @@ export const useLanguage = () => {
     const supportedLang = translations[browserLang] ? browserLang : 'es';
     setLanguage(supportedLang);
   }, []);
+
+  useEffect(() => {
+    document.documentElement.lang = language;
+  }, [language]);
 
   const t = (key) => {
     const keys = key.split('.');

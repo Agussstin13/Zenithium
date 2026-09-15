@@ -2,9 +2,9 @@ import { useContext } from "react";
 import { LanguageContext } from "../../context/LanguageProvider";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button-glow";
-import { Globe, Shield, Cloud, Database, Code2, Palette, ArrowRight } from "lucide-react";
+import { ArrowRight, Cloud, Code2, Database, Globe, Palette, Shield } from "lucide-react";
 
-const Services = () => {
+export default function Services(){
   const { t } = useContext(LanguageContext);
 
   const services = [
@@ -12,7 +12,7 @@ const Services = () => {
       icon: Globe,
       title: t("services.webDevelopment"),
       description: t("services.webDevelopmentDescription"),
-      features: ["React", "TypeScript", "Tailwind CSS", "PWA"],
+      features: t("services.webDevelopmentFeatures"),
     },
     {
       icon: Shield,
@@ -47,65 +47,54 @@ const Services = () => {
   ];
 
   return (
-    <Section id="services" className="relative bg-gradient-to-b from-[hsl(var(--background)/0.1)] to-[hsl(var(--surface)/0.1)] backdrop-blur-sm">
-      <div className="text-center mb-16">
-        <h2 className="text-5xl md:text-6xl font-bold mb-6">
+    <Section id="services" className="overflow-hidden">
+      <div aria-hidden="true" className="absolute -right-56 top-40 h-[34rem] w-[34rem] rounded-full bg-primary/10 blur-[120px]" />
+
+      <div className="relative mb-14 grid items-end gap-6 md:grid-cols-[0.9fr_1.1fr] lg:mb-16">
+        <h2 className="section-heading">
           <span className="gradient-text">{t("servicesTitle")}</span>
         </h2>
-        <p className="text-xl text-muted-foreground max-w-3xl mx-auto">{t("servicesSubtitle")}</p>
+        <p className="max-w-2xl text-base leading-7 text-muted-foreground md:justify-self-end md:text-right lg:text-lg">
+          {t("servicesSubtitle")}
+        </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+      <div className="relative grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {services.map((service, index) => {
           const Icon = service.icon;
           return (
-            <div
+            <article
               key={service.title}
-              className="glass-card p-8 hover-glow hover-lift transition-all duration-300 group"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className="glass-card group flex min-h-[330px] flex-col overflow-hidden p-7 hover-glow sm:p-8"
             >
-              <div className="mb-6">
-                <div className="inline-flex p-3 rounded-lg bg-surface-elevated border border-primary/20">
-                  <Icon className="w-8 h-8 text-primary" />
-                </div>
+              <span className="absolute right-6 top-5 text-xs font-medium tracking-[0.18em] text-white/25">
+                {String(index + 1).padStart(2, "0")}
+              </span>
+              <div className="mb-10 flex h-12 w-12 items-center justify-center rounded-2xl border border-accent-neon/20 bg-accent-neon/10 text-accent-neon transition duration-300 group-hover:scale-105 group-hover:bg-accent-neon group-hover:text-background">
+                <Icon className="h-5 w-5" />
               </div>
-
-              <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-glow">{service.title}</h3>
-
-              <p className="text-muted-foreground mb-6 leading-relaxed">{service.description}</p>
-
-              <div className="space-y-2 mb-6">
-                {service.features.map((feature, i) => (
-                  <div key={i} className="flex items-center gap-2 text-sm">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                    <span className="text-text-dim">{feature}</span>
-                  </div>
+              <h3 className="max-w-sm text-xl font-semibold tracking-[-0.035em] text-white sm:text-2xl">{service.title}</h3>
+              <p className="mt-4 max-w-xl text-sm leading-6 text-muted-foreground">{service.description}</p>
+              <div className="mt-auto flex flex-wrap gap-2 pt-7">
+                {service.features.map((feature) => (
+                  <span key={feature} className="rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-[10px] font-medium text-[#c9c4d6] sm:text-xs">
+                    {feature}
+                  </span>
                 ))}
               </div>
-            </div>
+              <div aria-hidden="true" className="absolute -bottom-20 -right-20 h-44 w-44 rounded-full bg-primary/0 blur-3xl transition duration-500 group-hover:bg-primary/20" />
+            </article>
           );
         })}
       </div>
 
-      <div className="text-center">
-        <Button
-          variant="hero"
-          size="lg"
-          className="hover-lift"
-          onClick={() => {
-            const contactSection = document.querySelector("#contact");
-            if (contactSection) {
-              contactSection.scrollIntoView({ behavior: "smooth" });
-            }
-          }}
-        >
-          <Code2 className="w-5 h-5" />
+      <div className="mt-10 flex justify-center">
+        <Button variant="hero" size="lg" className="group" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>
+          <Code2 className="h-5 w-5" />
           {t("servicesCta")}
-          <ArrowRight className="w-5 h-5" />
+          <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
         </Button>
       </div>
     </Section>
   );
 };
-
-export default Services;

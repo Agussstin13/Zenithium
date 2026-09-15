@@ -1,22 +1,18 @@
-import { useState, useEffect, useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { LanguageContext } from "../../context/LanguageProvider";
 import { Button } from "@/components/ui/button-glow";
-import { Menu, X } from "lucide-react";
-import logo from "../../assets/logo.png"
+import { ArrowUpRight, Menu, X } from "lucide-react";
+import logo from "../../assets/logo.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const { language, setLanguage, t } = useContext(LanguageContext);
 
-
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
@@ -28,86 +24,98 @@ export default function Navigation() {
   ];
 
   const scrollToSection = (href) => {
-    const element = document.querySelector(href === "#hero" ? "section" : href);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-      setIsOpen(false);
-    }
+    document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
+    setIsOpen(false);
   };
 
   return (
-    <>
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
-        ? 'bg-background/80 backdrop-blur-md border-b border-border/20 shadow-lg'
-        : 'bg-transparent'
-        }`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex items-center gap-2">
-              <img src={logo} className="w-[40px]" />
-              <span className="text-xl font-bold gradient-text">Zenithium</span>
-            </div>
+    <nav className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-5" aria-label="Principal">
+      <div
+        className={`mx-auto max-w-[1200px] rounded-full border transition-all duration-300 ${
+          isScrolled || isOpen
+            ? "border-white/15 bg-[#030541]/90 shadow-[0_18px_60px_rgba(1,2,35,0.36)] backdrop-blur-xl"
+            : "border-white/10 bg-[#030541]/55 backdrop-blur-md"
+        }`}
+      >
+        <div className="flex h-[66px] items-center justify-between px-4 sm:px-5 lg:px-6">
+          <button
+            type="button"
+            onClick={() => scrollToSection("#hero")}
+            className="flex items-center gap-3 rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-neon"
+            aria-label="Zenithium"
+          >
+            <img src={logo} alt="" className="h-10 w-10 rounded-xl object-cover" />
+            <span className="text-lg font-semibold tracking-[-0.03em] text-white">Zenithium</span>
+          </button>
 
-            {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              {navItems.map((item) => (
-                <button
-                key={item.label}
-                href={item.href}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-muted-foreground hover:text-foreground transition-colors duration-200 relative group"
-                >
-                  {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full" />
-                </button>
-              ))}
-              <Button
-              variant="hero"
-              size="sm"
-              onClick={() => setLanguage(language === "es" ? "en" : "es")}
-            >
-              {language === "es" ? "EN" : "ES"}
-            </Button>
-            </div>
-
-            {/* Mobile menu button */}
-            <div className="md:hidden">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setIsOpen(!isOpen)}
-                className="text-foreground hover:bg-surface-elevated"
+          <div className="hidden items-center gap-1 lg:flex">
+            {navItems.map((item) => (
+              <button
+                type="button"
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+                className="rounded-full px-4 py-2 text-[13px] font-medium text-muted-foreground transition hover:bg-white/[0.06] hover:text-white"
               >
-                {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-              </Button>
-            </div>
+                {item.label}
+              </button>
+            ))}
           </div>
 
-          {/* Mobile Navigation */}
-          {isOpen && (
-            <div className="md:hidden absolute top-full left-0 right-0 glass-card border border-border/20 mx-4 rounded-lg shadow-xl animate-fade-in">
-              <div className="px-6 py-4 space-y-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.label}
-                    onClick={() => scrollToSection(item.href)}
-                    className="block w-full text-left text-muted-foreground hover:text-foreground transition-colors duration-200 py-2"
-                  >
-                    {item.label}
-                  </button>
-                ))}
-                <div className="pt-4 border-t border-border/20">
-                  <Button variant="hero" size="sm" className="w-full" onClick={() => scrollToSection('#contact')}>
-                    Consulta Gratis
-                  </Button>
-                </div>
-              </div>
-            </div>
-          )}
+          <div className="hidden items-center gap-2 lg:flex">
+            <button
+              type="button"
+              onClick={() => setLanguage(language === "es" ? "en" : "es")}
+              className="flex h-10 min-w-10 items-center justify-center rounded-full border border-white/10 px-3 text-xs font-semibold text-muted-foreground transition hover:border-white/20 hover:text-white"
+              aria-label={language === "es" ? "Switch to English" : "Cambiar a español"}
+            >
+              {language === "es" ? "EN" : "ES"}
+            </button>
+            <Button variant="hero" onClick={() => scrollToSection("#contact")}>
+              {t("navCta")}
+              <ArrowUpRight className="h-4 w-4" />
+            </Button>
+          </div>
+
+          <div className="flex items-center gap-2 lg:hidden">
+            <button
+              type="button"
+              onClick={() => setLanguage(language === "es" ? "en" : "es")}
+              className="flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-xs font-semibold text-muted-foreground"
+              aria-label={language === "es" ? "Switch to English" : "Cambiar a español"}
+            >
+              {language === "es" ? "EN" : "ES"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setIsOpen((open) => !open)}
+              className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-white"
+              aria-label={isOpen ? "Cerrar menú" : "Abrir menú"}
+              aria-expanded={isOpen}
+            >
+              {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+            </button>
+          </div>
         </div>
-      </nav>
-      <div className="h-[64px]"></div>
-    </>
+
+        {isOpen && (
+          <div className="mx-3 mb-3 rounded-[1.5rem] border border-white/10 bg-white/[0.045] p-3 lg:hidden">
+            {navItems.map((item) => (
+              <button
+                type="button"
+                key={item.href}
+                onClick={() => scrollToSection(item.href)}
+                className="flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm text-muted-foreground transition hover:bg-white/[0.06] hover:text-white"
+              >
+                {item.label}
+                <ArrowUpRight className="h-4 w-4" />
+              </button>
+            ))}
+            <Button variant="hero" className="mt-2 w-full" onClick={() => scrollToSection("#contact")}>
+              {t("navCta")}
+            </Button>
+          </div>
+        )}
+      </div>
+    </nav>
   );
-};
+}
