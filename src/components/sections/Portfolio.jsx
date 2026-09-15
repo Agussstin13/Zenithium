@@ -7,7 +7,7 @@ import Fidebill from "@/assets/Fidebill.png";
 import SaintAnalytics from "@/assets/SaintAnalytics.png";
 import ElMolino from "@/assets/ElMolino.jpg";
 
-const Portfolio = () => {
+export default function Portfolio() {
   const { t } = useContext(LanguageContext);
   const projects = [
     {
@@ -101,6 +101,4 @@ const Portfolio = () => {
       </div>
     </Section>
   );
-};
-
-export default Portfolio;
+}

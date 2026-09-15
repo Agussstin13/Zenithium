@@ -11,7 +11,7 @@ export default function ContactForm() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState(false);
 
-  const handleSubmit = async (event) => {
+  async function handleSubmit(event) {
     try {
       event.preventDefault();
       setSending(true);
@@ -36,7 +36,9 @@ export default function ContactForm() {
     } finally {
       setSending(false);
     }
-  };
+
+    return;
+  }
 
   const fieldClass = "h-12 rounded-2xl border-white/10 bg-white/[0.045] px-4 text-white placeholder:text-white/30 focus-visible:border-accent-neon/50 focus-visible:ring-1 focus-visible:ring-accent-neon focus-visible:ring-offset-0";
 

@@ -4,7 +4,7 @@ import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button-glow";
 import { ArrowRight, Award, Target, Users, Zap } from "lucide-react";
 
-const About = () => {
+export default function About() {
   const { t } = useContext(LanguageContext);
 
   const stats = [
@@ -148,6 +148,4 @@ const About = () => {
       </div>
     </Section>
   );
-};
-
-export default About;
+}

@@ -3,7 +3,7 @@ import { useLanguage } from "../hooks/useLanguage";
 
 export const LanguageContext = createContext();
 
-export const LanguageProvider = ({ children }) => {
+export function LanguageProvider({ children }) {
   const { language, setLanguage, t } = useLanguage();
 
   return (
@@ -11,4 +11,4 @@ export const LanguageProvider = ({ children }) => {
       {children}
     </LanguageContext.Provider>
   );
-};
+}

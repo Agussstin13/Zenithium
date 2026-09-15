@@ -21,7 +21,9 @@ export default function Hero() {
     return () => window.clearInterval(interval);
   }, [animatedTexts]);
 
-  const scrollTo = (id) => document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  function scrollTo(id) {
+    return document.querySelector(id)?.scrollIntoView({ behavior: "smooth" });
+  }
 
   return (
     <section id="hero" className="relative overflow-hidden px-5 pb-16 pt-36 sm:px-8 sm:pt-44 lg:min-h-[960px] lg:px-10 lg:pb-24">

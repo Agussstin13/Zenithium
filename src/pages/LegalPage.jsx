@@ -384,5 +384,10 @@ function LegalPage({ page }) {
   );
 }
 
-export const TermsPage = () => <LegalPage page="terms" />;
-export const PrivacyPage = () => <LegalPage page="privacy" />;
+export function TermsPage() {
+  return <LegalPage page="terms" />;
+}
+
+export function PrivacyPage() {
+  return <LegalPage page="privacy" />;
+}

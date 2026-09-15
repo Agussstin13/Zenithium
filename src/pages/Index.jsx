@@ -8,16 +8,18 @@ import Contact from "@/components/sections/Contact";
 import WhatsAppButton from "../components/myComponents/WhatsAppButton";
 
 export default function Index() {
-  <div className="site-shell min-h-screen">
-    <Navigation />
-    <main>
-      <Hero />
-      <Services />
-      <Portfolio />
-      <About />
-      <Contact />
-    </main>
-    <WhatsAppButton />
-    <Footer />
-  </div>
+  return (
+    <div className="site-shell min-h-screen">
+      <Navigation />
+      <main>
+        <Hero />
+        <Services />
+        <Portfolio />
+        <About />
+        <Contact />
+      </main>
+      <WhatsAppButton />
+      <Footer />
+    </div>
+  );
 }

@@ -289,7 +289,7 @@ const translations = {
   }
 };
 
-export const useLanguage = () => {
+export function useLanguage() {
   const [language, setLanguage] = useState('es');
 
   useEffect(() => {
@@ -302,7 +302,7 @@ export const useLanguage = () => {
     document.documentElement.lang = language;
   }, [language]);
 
-  const t = (key) => {
+  function t(key) {
     const keys = key.split('.');
     let value = translations[language];
 
@@ -311,7 +311,7 @@ export const useLanguage = () => {
     }
 
     return value || key;
-  };
+  }
 
   return { language, setLanguage, t };
-};
+}

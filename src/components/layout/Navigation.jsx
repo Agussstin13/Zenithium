@@ -10,7 +10,11 @@ export default function Navigation() {
   const { language, setLanguage, t } = useContext(LanguageContext);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 24);
+    function handleScroll() {
+      setIsScrolled(window.scrollY > 24);
+      return;
+    }
+
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -23,10 +27,11 @@ export default function Navigation() {
     { label: t("navContact"), href: "#contact" },
   ];
 
-  const scrollToSection = (href) => {
+  function scrollToSection(href) {
     document.querySelector(href)?.scrollIntoView({ behavior: "smooth" });
     setIsOpen(false);
-  };
+    return;
+  }
 
   return (
     <nav className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-6 sm:pt-5" aria-label="Principal">

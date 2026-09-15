@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 
-export const Section = ({ children, className, id, variant = "default" }) => {
+export function Section({ children, className, id, variant = "default" }) {
   const baseClasses = "relative scroll-mt-28 py-20 px-5 sm:px-8 lg:py-28 lg:px-10";
   
   const variants = {
@@ -19,4 +19,4 @@ export const Section = ({ children, className, id, variant = "default" }) => {
       </div>
     </section>
   );
-};
+}

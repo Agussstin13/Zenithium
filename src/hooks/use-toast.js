@@ -19,7 +19,7 @@ function genId() {
 
 const toastTimeouts = new Map()
 
-const addToRemoveQueue = (toastId) => {
+function addToRemoveQueue(toastId) {
   if (toastTimeouts.has(toastId)) {
     return
   }
@@ -33,9 +33,10 @@ const addToRemoveQueue = (toastId) => {
   }, TOAST_REMOVE_DELAY)
 
   toastTimeouts.set(toastId, timeout)
+  return
 }
 
-export const reducer = (state, action) => {
+export function reducer(state, action) {
   switch (action.type) {
     case "ADD_TOAST":
       return {
@@ -86,6 +87,8 @@ export const reducer = (state, action) => {
         toasts: state.toasts.filter((t) => t.id !== action.toastId),
       }
   }
+
+  return state
 }
 
 const listeners = []
@@ -97,17 +100,22 @@ function dispatch(action) {
   listeners.forEach((listener) => {
     listener(memoryState)
   })
+  return
 }
 
 function toast({ ...props }) {
   const id = genId()
 
-  const update = (props) =>
-    dispatch({
+  function update(props) {
+    return dispatch({
       type: "UPDATE_TOAST",
       toast: { ...props, id },
     })
-  const dismiss = () => dispatch({ type: "DISMISS_TOAST", toastId: id })
+  }
+
+  function dismiss() {
+    return dispatch({ type: "DISMISS_TOAST", toastId: id })
+  }
 
   dispatch({
     type: "ADD_TOAST",
