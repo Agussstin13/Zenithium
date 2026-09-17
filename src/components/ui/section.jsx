@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 export function Section({ children, className, id, variant = "default" }) {
-  const baseClasses = "relative scroll-mt-28 py-20 px-5 sm:px-8 lg:py-28 lg:px-10";
+  const baseClasses = "relative px-5 py-12 sm:px-8 lg:px-10 lg:py-16";
   
   const variants = {
     default: "",
@@ -10,11 +10,11 @@ export function Section({ children, className, id, variant = "default" }) {
   };
 
   return (
-    <section 
-      id={id}
-      className={cn(baseClasses, variants[variant], className)}
-    >
-      <div className="max-w-[1200px] mx-auto">
+    <section className={cn(baseClasses, variants[variant], className)}>
+      <div
+        id={id}
+        className="mx-auto max-w-[1200px] scroll-mt-[86px] sm:scroll-mt-[94px]"
+      >
         {children}
       </div>
     </section>

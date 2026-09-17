@@ -29,7 +29,7 @@ const termsContentEs = {
     {
       title: "3. Pagos y suscripciones",
       paragraphs: [
-        "Los importes, moneda, impuestos aplicables, vencimientos y etapas de pago se informan antes de confirmar la contratación. Los pagos pueden procesarse mediante dLocal Go u otro medio de pago acordado con el cliente. El uso del procesador de pagos también se encuentra sujeto a sus propios términos y políticas.",
+        "Los importes, moneda, impuestos aplicables, vencimientos y etapas de pago se informan antes de confirmar la contratación. Los pagos pueden procesarse mediante PayPal u otro medio acordado con el cliente. El uso del procesador de pagos también se encuentra sujeto a sus propios términos y políticas.",
         "Cuando se contrate una suscripción o servicio recurrente, el precio y la frecuencia de cobro —semanal, mensual, trimestral, semestral, anual u otra expresamente informada— se mostrarán antes de confirmar el pago. Al contratar, el cliente autoriza los cobros recurrentes correspondientes.",
       ],
     },
@@ -42,7 +42,8 @@ const termsContentEs = {
     {
       title: "5. Cancelación",
       paragraphs: [
-        `El cliente puede solicitar la cancelación escribiendo a ${CONTACT_EMAIL}. En las suscripciones, la solicitud realizada antes de la próxima fecha de cobro evita renovaciones y cargos futuros; el servicio permanecerá disponible hasta finalizar el período ya abonado, salvo que se acuerde algo distinto.`,
+        `El cliente puede cancelar una suscripción desde el medio de pago utilizado, cuando esa opción esté disponible, o solicitar la cancelación escribiendo a ${CONTACT_EMAIL}. Si se cancela antes de la próxima fecha de cobro, no habrá nuevas renovaciones ni cargos.`,
+        "El servicio recurrente permanecerá disponible hasta finalizar el período ya abonado, salvo que las condiciones particulares informadas antes de la contratación establezcan algo diferente.",
         "En proyectos de pago único o por etapas, la cancelación no elimina la obligación de abonar el trabajo ya realizado, los entregables aprobados ni los costos de terceros asumidos para el proyecto. Las condiciones particulares de la propuesta aceptada tendrán prioridad cuando establezcan un procedimiento diferente.",
       ],
     },
@@ -104,7 +105,8 @@ const privacyContentEs = {
     {
       title: "4. Pagos",
       paragraphs: [
-        "Cuando un pago se procesa mediante dLocal Go u otro proveedor habilitado, los datos necesarios para la transacción son tratados directamente por ese proveedor conforme a sus propios términos y políticas de privacidad. Zenithium Solutions recibe únicamente la información necesaria para identificar, confirmar y administrar la operación.",
+        "Cuando un pago o una suscripción se procesa mediante PayPal u otro proveedor habilitado, los datos necesarios para la operación son tratados directamente por ese proveedor conforme a sus propios términos y políticas de privacidad. Zenithium Solutions no recibe ni almacena los datos completos de tarjetas o cuentas de pago.",
+        "Zenithium Solutions puede recibir y conservar la información necesaria para identificar, confirmar y administrar el pago o la suscripción, como el identificador de la operación, importe, moneda, fecha, estado y los datos del cliente que el proveedor de pagos ponga a disposición.",
       ],
     },
     {
@@ -169,7 +171,7 @@ const termsContentEn = {
     {
       title: "3. Payments and subscriptions",
       paragraphs: [
-        "Amounts, currency, applicable taxes, due dates, and payment stages are communicated before the engagement is confirmed. Payments may be processed through dLocal Go or another payment method agreed upon with the client. Use of the payment processor is also subject to its own terms and policies.",
+        "Amounts, currency, applicable taxes, due dates, and payment stages are communicated before the engagement is confirmed. Payments may be processed through PayPal or another payment method agreed upon with the client. Use of the payment processor is also subject to its own terms and policies.",
         "When a subscription or recurring service is contracted, the price and billing frequency—weekly, monthly, quarterly, semiannual, annual, or another expressly stated frequency—will be displayed before payment is confirmed. By contracting, the client authorizes the corresponding recurring charges.",
       ],
     },
@@ -182,7 +184,8 @@ const termsContentEn = {
     {
       title: "5. Cancellation",
       paragraphs: [
-        `The client may request cancellation by writing to ${CONTACT_EMAIL}. For subscriptions, a request made before the next billing date prevents future renewals and charges; the service will remain available until the end of the paid period unless otherwise agreed.`,
+        `The client may cancel a subscription through the payment method used, when that option is available, or request cancellation by writing to ${CONTACT_EMAIL}. If cancelled before the next billing date, there will be no further renewals or charges.`,
+        "The recurring service will remain available until the end of the paid period unless the specific conditions disclosed before contracting state otherwise.",
         "For one-time or milestone-based projects, cancellation does not remove the obligation to pay for work already completed, approved deliverables, or third-party costs incurred for the project. The specific conditions in the accepted proposal will take precedence when they establish a different procedure.",
       ],
     },
@@ -244,7 +247,8 @@ const privacyContentEn = {
     {
       title: "4. Payments",
       paragraphs: [
-        "When a payment is processed through dLocal Go or another enabled provider, the data required for the transaction is handled directly by that provider in accordance with its own terms and privacy policies. Zenithium Solutions receives only the information required to identify, confirm, and manage the transaction.",
+        "When a payment or subscription is processed through PayPal or another enabled provider, the data required for the operation is handled directly by that provider in accordance with its own terms and privacy policies. Zenithium Solutions does not receive or store complete card or payment account details.",
+        "Zenithium Solutions may receive and retain the information needed to identify, confirm, and manage the payment or subscription, such as the transaction identifier, amount, currency, date, status, and the customer details made available by the payment provider.",
       ],
     },
     {

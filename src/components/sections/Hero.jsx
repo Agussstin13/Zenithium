@@ -26,7 +26,7 @@ export default function Hero() {
   }
 
   return (
-    <section id="hero" className="relative overflow-hidden px-5 pb-16 pt-36 sm:px-8 sm:pt-44 lg:min-h-[960px] lg:px-10 lg:pb-24">
+    <section id="hero" className="relative scroll-mt-[86px] overflow-hidden px-5 pb-16 pt-36 sm:scroll-mt-[94px] sm:px-8 sm:pt-44 lg:min-h-[960px] lg:px-10 lg:pb-24">
       <div aria-hidden="true" className="absolute left-[-10rem] top-32 h-[32rem] w-[32rem] rounded-full bg-primary/20 blur-[120px]" />
       <div aria-hidden="true" className="absolute right-[-12rem] top-24 h-[34rem] w-[34rem] rounded-full bg-accent-neon/10 blur-[130px]" />
       <div aria-hidden="true" className="absolute inset-x-0 top-[20rem] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />

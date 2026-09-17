@@ -146,7 +146,8 @@ const translations = {
 
     // Footer
     footerDescription: "Transformando ideas en soluciones tecnológicas de vanguardia",
-    footerLegalNav: "Información legal",
+    footerLegalNav: "Cobros e información legal",
+    footerPayments: "Cobros",
     footerTerms: "Términos y Condiciones",
     footerPrivacy: "Política de Privacidad",
     footerRights: "© 2026 Zenithium. Todos los derechos reservados."
@@ -296,7 +297,8 @@ const translations = {
 
     // Footer
     footerDescription: "Transforming ideas into cutting-edge technology solutions",
-    footerLegalNav: "Legal information",
+    footerLegalNav: "Payments and legal information",
+    footerPayments: "Payments",
     footerTerms: "Terms and Conditions",
     footerPrivacy: "Privacy Policy",
     footerRights: "© 2026 Zenithium. All rights reserved."

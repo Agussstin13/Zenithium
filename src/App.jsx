@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "./context/LanguageProvider";
 import Index from "./pages/Index";
 import { PrivacyPage, TermsPage } from "./pages/LegalPage";
+import PaymentsPage from "./pages/PaymentsPage";
 import NotFound from "./pages/NotFound";
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="/" element={<Index />} />
           <Route path="/terminos-y-condiciones" element={<TermsPage />} />
           <Route path="/politica-de-privacidad" element={<PrivacyPage />} />
+          <Route path="/cobros" element={<PaymentsPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

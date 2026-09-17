@@ -34,6 +34,7 @@ export default function Footer() {
             zenithiumsolutions@gmail.com
           </a>
           <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2 text-[11px] text-muted-foreground" aria-label={t("footerLegalNav")}>
+            <Link to="/cobros/" className="transition hover:text-white">{t("footerPayments")}</Link>
             <Link to="/terminos-y-condiciones/" className="transition hover:text-white">{t("footerTerms")}</Link>
             <Link to="/politica-de-privacidad/" className="transition hover:text-white">{t("footerPrivacy")}</Link>
           </nav>
