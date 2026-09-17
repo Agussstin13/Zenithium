@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>Redirigiendo | Zenithium Solutions</title>
+</head>
+<body>
+  <script>
+    (function redirectToSpa() {
+      var route = window.location.pathname + window.location.search + window.location.hash;
+      window.location.replace("/?__spa=" + encodeURIComponent(route));
+      return;
+    })();
+  </script>
+  <noscript>
+    <p>Para continuar, volvé al <a href="/">inicio de Zenithium Solutions</a>.</p>
+  </noscript>
+</body>
+</html>

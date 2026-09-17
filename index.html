@@ -2,6 +2,15 @@
 <html lang="es">
 
 <head>
+  <script>
+    (function restoreSpaRoute() {
+      var route = new URLSearchParams(window.location.search).get("__spa");
+      if (route && route.charAt(0) === "/") {
+        window.history.replaceState(null, "", route);
+      }
+      return;
+    })();
+  </script>
   <script>(function (w, d, s, l, i) {
       w[l] = w[l] || []; w[l].push({
         'gtm.start':
@@ -119,8 +128,8 @@
       ]
     }
   </script>
-  <script type="module" crossorigin src="/assets/main-DOcxnCyT.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/main-Dk9Xs-z-.css">
+  <script type="module" crossorigin src="/assets/index-CCcy3q7G.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-DKKoAXgq.css">
 </head>
 
 <body>

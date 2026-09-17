@@ -35,3 +35,4 @@ Zenithium Solutions es una empresa de desarrollo de software ubicada en Mar del 
 
 - Términos y Condiciones: https://zenithium.com.ar/terminos-y-condiciones/
 - Política de Privacidad: https://zenithium.com.ar/politica-de-privacidad/
+- Cobros y suscripciones: https://zenithium.com.ar/cobros/
